@@ -11,10 +11,19 @@ class Product extends Model
     /** @use HasFactory<\Database\Factories\ProductFactory> */
     use HasFactory, HasTranslations;
 
-    protected $fillable = ['name', 'price', 'desc', 'category_id']; 
-    public $translatable = ['name', 'desc'];
+    protected $fillable = ['name', 'price', 'desc', 'category_id'];
+    public $translatable = [
+        'name',
+        'desc'
+    ];
 
-    public function category(){
-        return $this->belongsTo(Product::class);
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function stocks()
+    {
+        return $this->hasMany(Stock::class);
     }
 }
