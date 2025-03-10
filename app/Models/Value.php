@@ -13,4 +13,8 @@ class Value extends Model
     protected $fillable = ['name'];
 
     public $translatable = ['name'];
+
+    public function attribute(){
+        return $this->belongsTo(Attribute::class);
+    }
 }

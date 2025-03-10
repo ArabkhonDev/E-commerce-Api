@@ -2,6 +2,8 @@
 
 
 use App\Http\Controllers\Api\CategoryApiController;
+use App\Http\Controllers\Api\ProductApiController;
+// use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,4 +14,5 @@ Route::get('/user', function (Request $request) {
 
 Route::apiResources([
     'categories'=>CategoryApiController::class,
+    'products'=>ProductApiController::class,
 ]);
