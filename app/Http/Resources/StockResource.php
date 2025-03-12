@@ -24,6 +24,7 @@ class StockResource extends JsonResource
     public function getAttributes( array $result){
         $attributes = json_decode($this->attributes);
         foreach ($attributes as $stockAttribute) {
+            /* todo cashe it */
             $attribute = Attribute::find($stockAttribute->attribute_id);
             $value = Value::find($stockAttribute->value_id);
             $result[$attribute->name] = $value->getTranslations('name');
