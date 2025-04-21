@@ -16,11 +16,11 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::apiResources([
     'categories'=>CategoryApiController::class,
     'categories.products'=>CategoryProductApiController::class,
-    // 'favorites'=> FavoriteController::class,
+     'favorites'=> FavoriteController::class,
     'products'=>ProductApiController::class,
 ]);
 
 Route::post('login', [AuthController::class,'login']);
 Route::post('logout', [AuthController::class,'logout'])->middleware('auth:sanctum');
-Route::get('register', [AuthController::class,'resgiter']);
+Route::get('register', [AuthController::class,'register']);
 Route::get('user', [AuthController::class,'user'])->middleware('auth:sanctum');
